@@ -1,0 +1,137 @@
+.header {
+  color: var(--color-text);
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__theme-switch {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.8rem;
+  }
+
+  &__button {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: currentColor;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  margin-left: 0;
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: -47rem;
+    z-index: 100;
+    fill: var(--color-input);
+  }
+
+  &__input {
+    padding: 1.5rem 2.5rem 1.5rem 8rem;
+    font-size: 1.8rem;
+    color: var(--color-input);
+    width: 50rem;
+    border: none;
+    outline: none;
+    z-index: 1;
+    align-self: stretch;
+
+    @include card-radius;
+    @include card-shadow;
+  }
+}
+
+.filter {
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--color-elements);
+    padding: 1.5rem 2.5rem;
+    width: 23rem;
+
+    @include card-radius;
+    @include card-shadow;
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+.dropdown {
+  background-color: var(--color-elements);
+  position: absolute;
+  right: 0;
+  top: 12.2rem;
+  width: 23rem;
+  z-index: 1000;
+
+  @include card-radius;
+  @include card-shadow;
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2.5rem;
+  }
+
+  &__item {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.card {
+  background-color: var(--color-elements);
+  color: var(--color-text);
+  width: 30rem;
+  z-index: 0;
+
+  @include card-radius;
+  @include card-shadow;
+
+  &__flag {
+  }
+
+  &__info {
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+
+    &--name {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &--item {
+      font-size: 1.6rem;
+      font-weight: 300;
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}

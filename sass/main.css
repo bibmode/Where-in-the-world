@@ -1,1 +1,255 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+body {
+  --color-bg: hsl(0, 0%, 98%);
+  --color-elements: hsl(0, 0%, 100%);
+  --color-input: hsl(0, 0%, 52%);
+  --color-text: hsl(200, 15%, 8%);
+}
+
+.hidden {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header {
+  background-color: var(--color-elements);
+  -webkit-box-shadow: 0 0.2rem 0.5rem rgba(131, 131, 131, 0.185);
+          box-shadow: 0 0.2rem 0.5rem rgba(131, 131, 131, 0.185);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 7rem;
+  width: 100%;
+}
+
+.main {
+  width: 90%;
+  position: relative;
+}
+
+.nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5rem 0;
+}
+
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header {
+  color: var(--color-text);
+}
+
+.header__title {
+  font-size: 3rem;
+}
+
+.header__theme-switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
+}
+
+.header__button {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: currentColor;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  margin-left: 0;
+}
+
+.search__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: -47rem;
+  z-index: 100;
+  fill: var(--color-input);
+}
+
+.search__input {
+  padding: 1.5rem 2.5rem 1.5rem 8rem;
+  font-size: 1.8rem;
+  color: var(--color-input);
+  width: 50rem;
+  border: none;
+  outline: none;
+  z-index: 1;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 5px;
+  -webkit-box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+          box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+}
+
+.filter__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: var(--color-elements);
+  padding: 1.5rem 2.5rem;
+  width: 23rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+          box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+}
+
+.filter__label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.filter__icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.dropdown {
+  background-color: var(--color-elements);
+  position: absolute;
+  right: 0;
+  top: 12.2rem;
+  width: 23rem;
+  z-index: 1000;
+  border-radius: 5px;
+  -webkit-box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+          box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+}
+
+.dropdown__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.5rem 2.5rem;
+}
+
+.dropdown__item {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.dropdown__item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  background-color: var(--color-elements);
+  color: var(--color-text);
+  width: 30rem;
+  z-index: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+          box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+}
+
+.card__info {
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.card__info--name {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.card__info--item {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.card__info--item span {
+  font-weight: 600;
+}
+/*# sourceMappingURL=main.css.map */

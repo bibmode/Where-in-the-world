@@ -1,0 +1,11 @@
+.hidden {
+  display: none;
+}
+
+@mixin card-radius {
+  border-radius: 5px;
+}
+
+@mixin card-shadow {
+  box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+}

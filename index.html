@@ -4,9 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Countries Info</title>
+
+    <title>Where in the world?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="sass/main.css" />
   </head>
-  <body>
-    hello!
+  <body data-theme="">
+    <!-- ////////// HEADER ////////// -->
+    <header class="header">
+      <h1 class="header__title">Where in the world?</h1>
+      <div class="header__theme-switch">
+        <svg class="header__icon">
+          <use xlink:href="icons/sprite.svg#icon-moon"></use>
+        </svg>
+        <a href="#" class="header__button">Dark Mode</a>
+      </div>
+    </header>
+
+    <!-- ////////// MAIN CONTAINER ////////// -->
+    <main class="main">
+      <!-- ////////// NAVIGATION ////////// -->
+      <nav class="nav">
+        <!-- ////////// SEARCH BAR ////////// -->
+        <div class="search">
+          <input
+            class="search__input"
+            type="text"
+            placeholder="Search for a country..."
+          />
+          <svg class="search__icon">
+            <use xlink:href="icons/sprite.svg#icon-magnifying-glass"></use>
+          </svg>
+        </div>
+
+        <!-- ////////// FILTER ////////// -->
+        <div class="filter">
+          <div class="filter__button">
+            <a href="#" class="filter__label">Filter by Region</a>
+            <svg class="filter__icon filter__icon--down">
+              <use xlink:href="icons/sprite.svg#icon-chevron-down"></use>
+            </svg>
+            <svg class="filter__icon filter__icon--up hidden">
+              <use xlink:href="icons/sprite.svg#icon-chevron-up"></use>
+            </svg>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ////////// DROPDOWN ////////// -->
+      <div class="dropdown hidden">
+        <ul class="dropdown__options">
+          <a href="#" class="dropdown__item">Africa</a>
+          <a href="#" class="dropdown__item">America</a>
+          <a href="#" class="dropdown__item">Asia</a>
+          <a href="#" class="dropdown__item">Europe</a>
+          <a href="#" class="dropdown__item">Oceania</a>
+        </ul>
+      </div>
+
+      <!-- ////////// CARDS CONTAINER ////////// -->
+      <div class="card-container">
+        <!-- ////////// COUNTRY CARD ////////// -->
+        <!-- <div class="card">
+          <img class="card__flag" src="" alt="flag" />
+          <div class="card__info">
+            <h2 class="card__info--name">Philippines</h2>
+            <h3 class="card__info--item">
+              <span>Population: </span>170,000,000
+            </h3>
+            <h3 class="card__info--item"><span>Region: </span>Asia</h3>
+            <h3 class="card__info--item"><span>Capital: </span>Manila</h3>
+          </div>
+        </div> -->
+      </div>
+    </main>
+
+    <!-- ////////// JAVASCRIPT ////////// -->
+    <script src="app.js"></script>
   </body>
 </html>
