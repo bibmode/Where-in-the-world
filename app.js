@@ -134,6 +134,27 @@ const backAction = function () {
 };
 
 ////////////////////////////////
+// ADD BORDER BUTTONS
+
+const addBorders = function (countries) {
+  const borderContainer = document.querySelector(".facts__borders");
+
+  if (countries.length) {
+    countries.forEach((country) => {
+      fetch(`https://restcountries.eu/rest/v2/alpha/${country}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const borderHTML = `<button class="facts__borders--btn">${data.name}</button>`;
+          borderContainer.insertAdjacentHTML("beforeend", borderHTML);
+        });
+    });
+  } else {
+    const notice = '<h3 class="facts__borders--notice">None</h3>';
+    borderContainer.insertAdjacentHTML("beforeend", notice);
+  }
+};
+
+////////////////////////////////
 // SHOW DIV
 
 const showInfoDiv = function (country) {
@@ -180,7 +201,6 @@ const showInfoDiv = function (country) {
 
           <div class="facts__borders">
             <h3 class="facts__borders--label">Border Countries:</h3>
-            <button class="facts__borders--btn">France</button>
           </div>
         </div>
       </div>
@@ -188,19 +208,6 @@ const showInfoDiv = function (country) {
 
   mainSection.style.display = "none";
   document.body.insertAdjacentHTML("beforeend", html);
+  addBorders(country.borders);
   backAction();
 };
-
-////////////////////////////////
-// GET INDIVIDUAL COUNTRY
-
-const getCountry = function (country) {
-  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
-    .then((response) => response.json())
-    .then(([data]) => {
-      console.log(data);
-      showInfoDiv(data);
-    });
-};
-
-//getCountry("belgium");

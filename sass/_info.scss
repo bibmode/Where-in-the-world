@@ -57,6 +57,8 @@
 
   &__borders {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
     &--label {
       font-size: 1.8rem;
@@ -64,9 +66,15 @@
       margin-right: 1.5rem;
     }
 
+    &--notice {
+      font-size: inherit;
+      font-weight: 300;
+    }
+
     &--btn {
       padding: 0.5rem 2.5rem;
-
+      margin-left: 1rem;
+      margin-bottom: 1.5rem;
       @include btn-base;
       @include card-radius;
       @include card-shadow-sharp;

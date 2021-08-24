@@ -377,6 +377,11 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .facts__borders--label {
@@ -385,8 +390,15 @@ a {
   margin-right: 1.5rem;
 }
 
+.facts__borders--notice {
+  font-size: inherit;
+  font-weight: 300;
+}
+
 .facts__borders--btn {
   padding: 0.5rem 2.5rem;
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
   background-color: var(--color-elements);
   font-weight: 600;
   font-family: inherit;
