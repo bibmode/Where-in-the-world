@@ -26,7 +26,8 @@ const toggleFilter = function () {
   document.addEventListener("mouseup", function (e) {
     if (
       e.target.classList.length === 0 ||
-      e.target.classList[0] !== "dropdown__item"
+      (e.target.classList[0] !== "dropdown__item" &&
+        e.target.classList[0] !== "filter__label")
     ) {
       dropdown.classList.add("hidden");
       downBtn.classList.remove("hidden");
@@ -42,6 +43,7 @@ filterLabel.addEventListener("click", toggleFilter);
 ////////////////////////////////
 // API FOR MAIN SECTION
 const cardContainer = document.querySelector(".card-container");
+const mainSection = document.querySelector(".main");
 
 ////////////////////////////////
 // MAIN FUNCTIONS
@@ -62,6 +64,7 @@ const addNewCard = function (country) {
           </div>
         </a>`;
 
+  cardContainer.style.display = "flex";
   cardContainer.insertAdjacentHTML("beforeend", html);
   cardContainer.lastChild.addEventListener("click", function () {
     showInfoDiv(country);
@@ -78,9 +81,11 @@ const removeCards = function () {
 const filterOptions = document.querySelectorAll(".dropdown__item");
 
 const filterRegion = function (e) {
+  cardContainer.style.display = "flex";
   filterOptions.forEach((option) => option.classList.remove("active-region"));
   e.target.classList.add("active-region");
   removeCards();
+  checkError();
 
   const region = e.target.innerText;
 
@@ -98,6 +103,7 @@ filterOptions.forEach((option) => {
 const showAllBtn = document.querySelector(".show-all__label");
 
 const showAllCountries = function () {
+  cardContainer.style.display = "flex";
   fetch(`https://restcountries.eu/rest/v2/all`)
     .then((response) => response.json())
     .then((data) =>
@@ -114,7 +120,25 @@ showAllCountries();
 showAllBtn.addEventListener("click", function () {
   removeCards();
   showAllCountries();
+  checkError();
 });
+
+////////////////////////////////
+// RENDER ERROR
+
+const renderError = function (msg) {
+  //we check for the 14th element which is the error message
+  checkError();
+
+  const errorMsg = `<h2 class="error-msg">${msg}</h2>`;
+  mainSection.insertAdjacentHTML("beforeend", errorMsg);
+};
+
+const checkError = function () {
+  if (mainSection.childNodes.length > 13) {
+    mainSection.removeChild(mainSection.lastChild);
+  }
+};
 
 ////////////////////////////////
 // SEARCH COUNTRY
@@ -124,10 +148,20 @@ const searchCountry = function (e) {
   if (e.key !== "Enter") return;
 
   fetch(`https://restcountries.eu/rest/v2/name/${e.target.value}`)
-    .then((response) => response.json())
+    .then((response) => {
+      //if response is false
+      if (!response.ok) throw new Error(`Country not found 🚫😣`);
+
+      return response.json();
+    })
     .then(([data]) => {
       removeCards();
       addNewCard(data);
+      checkError();
+    })
+    .catch((err) => {
+      cardContainer.style.display = "none";
+      renderError(`${err.message} Try again!`);
     });
 };
 
@@ -135,8 +169,6 @@ searchInput.addEventListener("keydown", searchCountry);
 
 ////////////////////////////////
 // API FOR INDIVIDUAL FACTS SECTION
-
-const mainSection = document.querySelector(".main");
 
 ////////////////////////////////
 // BACK BUTTON FUNCTIONALITY

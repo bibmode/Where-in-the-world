@@ -340,6 +340,12 @@ a {
   color: var(--color-text);
 }
 
+.error-msg {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
 .info {
   color: var(--color-text);
 }
