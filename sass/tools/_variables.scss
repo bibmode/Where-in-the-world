@@ -3,5 +3,19 @@ body {
   --color-bg: hsl(0, 0%, 98%);
   --color-elements: hsl(0, 0%, 100%);
   --color-input: hsl(0, 0%, 52%);
+  --color-show-all: hsl(0, 0%, 52%);
+  --color-search: hsl(0, 0%, 52%);
   --color-text: hsl(200, 15%, 8%);
+  --color-icons: hsl(200, 15%, 8%);
+}
+
+body[data-theme="dark"] {
+  --color-active: hsl(217, 61%, 56%);
+  --color-bg: hsl(207, 26%, 17%);
+  --color-elements: hsl(209, 23%, 22%);
+  --color-input: hsl(209, 23%, 22%);
+  --color-show-all: hsl(0, 0%, 100%);
+  --color-search: hsl(209, 23%, 22%);
+  --color-text: hsl(0, 0%, 100%);
+  --color-icons: hsl(0, 0%, 100%);
 }

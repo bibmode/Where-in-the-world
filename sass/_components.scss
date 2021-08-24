@@ -18,6 +18,7 @@
     width: 2rem;
     height: 2rem;
     margin-right: 0.8rem;
+    fill: var(--color-icons);
   }
 
   &__button {
@@ -38,7 +39,7 @@
     height: 2.5rem;
     margin-left: -47rem;
     z-index: 100;
-    fill: var(--color-input);
+    fill: var(--color-search);
   }
 
   &__input {
@@ -64,9 +65,9 @@
   &__label {
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--color-input);
+    color: var(--color-show-all);
 
-    border-bottom: 2px solid var(--color-input);
+    border-bottom: 2px solid var(--color-show-all);
     cursor: pointer;
     transition: all 0.2s;
 
@@ -104,6 +105,7 @@
   &__icon {
     width: 1.8rem;
     height: 1.8rem;
+    fill: var(--color-icons);
 
     &--down {
       cursor: pointer;

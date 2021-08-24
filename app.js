@@ -2,6 +2,18 @@
 
 ////////////////////////////////
 // THEME
+const themeBtn = document.querySelector(".header__button");
+let themeStatus = 1; //1 is for light, 0 is for black
+
+themeBtn.addEventListener("click", function () {
+  if (themeStatus === 1) {
+    themeStatus = 0;
+    document.body.setAttribute("data-theme", "dark");
+  } else {
+    themeStatus = 1;
+    document.body.setAttribute("data-theme", "");
+  }
+});
 
 ////////////////////////////////
 // DROP DOWN TOGGLE
@@ -27,7 +39,10 @@ const toggleFilter = function () {
     if (
       e.target.classList.length === 0 ||
       (e.target.classList[0] !== "dropdown__item" &&
-        e.target.classList[0] !== "filter__label")
+        e.target.classList[0] !== "filter__label" &&
+        e.target.classList[0] !== "filter__icon" &&
+        e.target.classList[0] !== "filter__icon--up" &&
+        e.target.classList[0] !== "filter__icon--down")
     ) {
       dropdown.classList.add("hidden");
       downBtn.classList.remove("hidden");

@@ -3,7 +3,21 @@ body {
   --color-bg: hsl(0, 0%, 98%);
   --color-elements: hsl(0, 0%, 100%);
   --color-input: hsl(0, 0%, 52%);
+  --color-show-all: hsl(0, 0%, 52%);
+  --color-search: hsl(0, 0%, 52%);
   --color-text: hsl(200, 15%, 8%);
+  --color-icons: hsl(200, 15%, 8%);
+}
+
+body[data-theme="dark"] {
+  --color-active: hsl(217, 61%, 56%);
+  --color-bg: hsl(207, 26%, 17%);
+  --color-elements: hsl(209, 23%, 22%);
+  --color-input: hsl(209, 23%, 22%);
+  --color-show-all: hsl(0, 0%, 100%);
+  --color-search: hsl(209, 23%, 22%);
+  --color-text: hsl(0, 0%, 100%);
+  --color-icons: hsl(0, 0%, 100%);
 }
 
 .hidden {
@@ -131,6 +145,7 @@ a {
   width: 2rem;
   height: 2rem;
   margin-right: 0.8rem;
+  fill: var(--color-icons);
 }
 
 .header__button {
@@ -156,7 +171,7 @@ a {
   height: 2.5rem;
   margin-left: -47rem;
   z-index: 100;
-  fill: var(--color-input);
+  fill: var(--color-search);
 }
 
 .search__input {
@@ -189,8 +204,8 @@ a {
 .show-all__label {
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--color-input);
-  border-bottom: 2px solid var(--color-input);
+  color: var(--color-show-all);
+  border-bottom: 2px solid var(--color-show-all);
   cursor: pointer;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -234,6 +249,7 @@ a {
 .filter__icon {
   width: 1.8rem;
   height: 1.8rem;
+  fill: var(--color-icons);
 }
 
 .filter__icon--down {
