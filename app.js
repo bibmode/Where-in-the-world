@@ -25,7 +25,7 @@ upBtn.addEventListener("click", toggleFilter);
 filterLabel.addEventListener("click", toggleFilter);
 
 ////////////////////////////////
-// API
+// API FOR MAIN SECTION
 const cardContainer = document.querySelector(".card-container");
 
 ////////////////////////////////
@@ -48,6 +48,9 @@ const addNewCard = function (country) {
         </a>`;
 
   cardContainer.insertAdjacentHTML("beforeend", html);
+  cardContainer.lastChild.addEventListener("click", function () {
+    showInfoDiv(country);
+  });
 };
 
 const removeCards = function () {
@@ -113,14 +116,91 @@ const searchCountry = function (e) {
 searchInput.addEventListener("keydown", searchCountry);
 
 ////////////////////////////////
-// TEST
+// API FOR INDIVIDUAL FACTS SECTION
+
+const mainSection = document.querySelector(".main");
+
+////////////////////////////////
+// BACK BUTTON FUNCTIONALITY
+
+const backAction = function () {
+  const backBtn = document.querySelector(".info__button--label");
+
+  backBtn.addEventListener("click", function () {
+    const infoDiv = document.querySelector(".info");
+    mainSection.style.display = "block";
+    infoDiv.remove();
+  });
+};
+
+////////////////////////////////
+// SHOW DIV
+
+const showInfoDiv = function (country) {
+  const languages = [];
+  country.languages.forEach((obj) => {
+    languages.push(obj.name);
+  });
+
+  const html = `<div class="info">
+      <div class="info__button">
+        <button class="info__button--label">&larr; Back</button>
+      </div>
+      <div class="info__main">
+        <div class="flag">
+          <img class="flag__img" src="${country.flag}" alt="flag" />
+        </div>
+        <div class="facts">
+          <h1 class="facts__name">${country.name}</h1>
+
+          <div class="facts__list">
+            <ul class="list">
+              <li class="list__item"><span>Native Name:</span> ${
+                country.name
+              }</li>
+              <li class="list__item"><span>Population:</span> ${country.population.toLocaleString()}</li>
+              <li class="list__item"><span>Region:</span> ${country.region}</li>
+              <li class="list__item"><span>Sub Region:</span> ${
+                country.subregion
+              }</li>
+              <li class="list__item"><span>Capital:</span> ${
+                country.capital
+              }</li>
+              <li class="list__item"><span>Top Level Domain:</span> ${
+                country.topLevelDomain[0]
+              }</li>
+              <li class="list__item"><span>Currencies:</span> ${
+                country.currencies[0].name
+              }</li>
+              <li class="list__item"><span>Languages:</span> ${languages.join(
+                ", "
+              )}</li>
+            </ul>
+          </div>
+
+          <div class="facts__borders">
+            <h3 class="facts__borders--label">Border Countries:</h3>
+            <button class="facts__borders--btn">France</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  mainSection.style.display = "none";
+  document.body.insertAdjacentHTML("beforeend", html);
+  backAction();
+};
+
+////////////////////////////////
+// GET INDIVIDUAL COUNTRY
 
 const getCountry = function (country) {
   fetch(`https://restcountries.eu/rest/v2/name/${country}`)
     .then((response) => response.json())
     .then(([data]) => {
       console.log(data);
+      showInfoDiv(data);
     });
 };
 
-getCountry("philippines");
+//getCountry("belgium");

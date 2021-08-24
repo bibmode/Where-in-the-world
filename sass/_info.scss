@@ -14,7 +14,7 @@
       font-size: 1.8rem;
       word-spacing: 0.8rem;
       padding: 1rem 3.5rem;
-
+      cursor: pointer;
       @include card-radius;
       @include card-shadow-sharp;
       @include btn-base;
@@ -30,10 +30,14 @@
 
 .flag {
   background-color: #fff;
-  width: 57rem;
+  width: 62rem;
   height: 45rem;
   margin-right: 9%;
   &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
   }
 }
 
