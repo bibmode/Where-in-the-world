@@ -5,6 +5,7 @@
 
 const downBtn = document.querySelector(".filter__icon--down");
 const upBtn = document.querySelector(".filter__icon--up");
+const filterLabel = document.querySelector(".filter__label");
 const dropdown = document.querySelector(".dropdown");
 
 const toggleFilter = function () {
@@ -21,13 +22,14 @@ const toggleFilter = function () {
 
 downBtn.addEventListener("click", toggleFilter);
 upBtn.addEventListener("click", toggleFilter);
+filterLabel.addEventListener("click", toggleFilter);
 
 ////////////////////////////////
 // API
-
 const cardContainer = document.querySelector(".card-container");
 
-// SHOW CARD
+////////////////////////////////
+// MAIN FUNCTIONS
 const addNewCard = function (country) {
   const html = `<a class="card" data-region="${country.region}">
           <img class="card__flag" src="${country.flag}" alt="flag" />
@@ -48,22 +50,35 @@ const addNewCard = function (country) {
   cardContainer.insertAdjacentHTML("beforeend", html);
 };
 
-fetch(`https://restcountries.eu/rest/v2/all`)
-  .then((response) => response.json())
-  .then((data) =>
-    data.forEach((country) => {
-      addNewCard(country);
-    })
-  );
-
-////////////////////////////////
-// FILTER
-const filterOptions = document.querySelectorAll(".dropdown__item");
-
 const removeCards = function () {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => card.parentNode.removeChild(card));
 };
+
+////////////////////////////////
+// SHOW ALL
+const showAllBtn = document.querySelector(".show-all__label");
+
+const showAllCountries = function () {
+  fetch(`https://restcountries.eu/rest/v2/all`)
+    .then((response) => response.json())
+    .then((data) =>
+      data.forEach((country) => {
+        addNewCard(country);
+      })
+    );
+};
+
+showAllCountries();
+
+showAllBtn.addEventListener("click", function () {
+  removeCards();
+  showAllCountries();
+});
+
+////////////////////////////////
+// FILTER
+const filterOptions = document.querySelectorAll(".dropdown__item");
 
 const filterRegion = function (e) {
   removeCards();

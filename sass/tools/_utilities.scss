@@ -9,3 +9,16 @@
 @mixin card-shadow {
   box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
 }
+
+@mixin card-shadow-sharp {
+  box-shadow: 0 0rem 0.7rem rgba(131, 131, 131, 0.404);
+}
+
+@mixin btn-base {
+  background-color: var(--color-elements);
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  color: currentColor;
+}

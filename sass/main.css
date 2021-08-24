@@ -1,4 +1,5 @@
 body {
+  --color-active: hsl(217, 61%, 56%);
   --color-bg: hsl(0, 0%, 98%);
   --color-elements: hsl(0, 0%, 100%);
   --color-input: hsl(0, 0%, 52%);
@@ -63,7 +64,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5rem 7rem;
+  padding: 2rem 7rem;
   width: 100%;
 }
 
@@ -97,6 +98,13 @@ a {
           justify-content: space-between;
 }
 
+.info {
+  width: 100%;
+  padding: 0 5%;
+  padding-top: 7rem;
+  height: calc(100vh - 88px);
+}
+
 .header {
   color: var(--color-text);
 }
@@ -122,7 +130,7 @@ a {
 
 .header__button {
   font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 600;
   color: currentColor;
 }
 
@@ -160,6 +168,34 @@ a {
   border-radius: 5px;
   -webkit-box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
           box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+}
+
+.show-all {
+  padding-left: 47rem;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.show-all__label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-input);
+  border-bottom: 2px solid var(--color-input);
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.show-all__label:hover {
+  color: var(--color-active);
+  border-bottom: 2px solid var(--color-active);
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .filter__button {
@@ -232,9 +268,18 @@ a {
   overflow: hidden;
   z-index: 0;
   visibility: visible;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   border-radius: 5px;
   -webkit-box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
           box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+}
+
+.card:hover {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+  -webkit-box-shadow: 0rem 0rem 1.5rem rgba(163, 163, 163, 0.185);
+          box-shadow: 0rem 0rem 1.5rem rgba(163, 163, 163, 0.185);
 }
 
 .card__flag {
@@ -260,6 +305,110 @@ a {
 }
 
 .card__info--item span {
+  font-weight: 600;
+}
+
+.info {
+  color: var(--color-text);
+}
+
+.info__button {
+  margin-bottom: 7rem;
+}
+
+.info__button--label {
+  font-family: inherit;
+  font-size: 1.8rem;
+  word-spacing: 0.8rem;
+  padding: 1rem 3.5rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0rem 0.7rem rgba(131, 131, 131, 0.404);
+          box-shadow: 0 0rem 0.7rem rgba(131, 131, 131, 0.404);
+  background-color: var(--color-elements);
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  color: currentColor;
+}
+
+.info__main {
+  font-size: 1.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flag {
+  background-color: #fff;
+  width: 57rem;
+  height: 45rem;
+  margin-right: 9%;
+}
+
+.facts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: var(--color-text);
+}
+
+.facts__borders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.facts__borders--label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-right: 1.5rem;
+}
+
+.facts__borders--btn {
+  padding: 0.5rem 2.5rem;
+  background-color: var(--color-elements);
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  color: currentColor;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0rem 0.7rem rgba(131, 131, 131, 0.404);
+          box-shadow: 0 0rem 0.7rem rgba(131, 131, 131, 0.404);
+}
+
+.list {
+  height: 20rem;
+  width: 100%;
+  margin: 2rem 0 5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list__item {
+  list-style: none;
+  margin-bottom: 0.7rem;
+}
+
+.list__item span {
   font-weight: 600;
 }
 /*# sourceMappingURL=main.css.map */

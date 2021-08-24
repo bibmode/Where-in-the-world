@@ -17,7 +17,7 @@
 
   &__button {
     font-size: 1.8rem;
-    font-weight: 800;
+    font-weight: 600;
     color: currentColor;
   }
 }
@@ -48,6 +48,29 @@
 
     @include card-radius;
     @include card-shadow;
+  }
+}
+
+.show-all {
+  padding-left: 47rem;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  &__label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-input);
+
+    border-bottom: 2px solid var(--color-input);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      color: var(--color-active);
+      border-bottom: 2px solid var(--color-active);
+      font-size: 2rem;
+      font-weight: 800;
+    }
   }
 }
 
@@ -112,9 +135,15 @@
   overflow: hidden;
   z-index: 0;
   visibility: visible;
+  transition: all 0.2s;
 
   @include card-radius;
   @include card-shadow;
+
+  &:hover {
+    transform: scale(1.06);
+    box-shadow: 0rem 0rem 1.5rem rgba(163, 163, 163, 0.185);
+  }
 
   &__flag {
     width: 100%;
