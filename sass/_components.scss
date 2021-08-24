@@ -7,6 +7,11 @@
   &__theme-switch {
     display: flex;
     align-items: center;
+
+    &:hover > * {
+      color: var(--color-active);
+      fill: var(--color-active);
+    }
   }
 
   &__icon {
@@ -79,6 +84,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 
     background-color: var(--color-elements);
     padding: 1.5rem 2.5rem;
@@ -89,6 +95,7 @@
   }
 
   &__label {
+    flex: 1;
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--color-text);
@@ -97,6 +104,14 @@
   &__icon {
     width: 1.8rem;
     height: 1.8rem;
+
+    &--down {
+      cursor: pointer;
+    }
+
+    &--up {
+      cursor: pointer;
+    }
   }
 }
 
@@ -123,6 +138,10 @@
     color: var(--color-text);
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+      @include dropdown-active;
     }
   }
 }
@@ -169,4 +188,9 @@
       }
     }
   }
+}
+
+.active-region {
+  @include dropdown-active;
+  color: var(--color-text);
 }

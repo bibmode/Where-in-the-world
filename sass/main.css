@@ -122,6 +122,11 @@ a {
           align-items: center;
 }
 
+.header__theme-switch:hover > * {
+  color: var(--color-active);
+  fill: var(--color-active);
+}
+
 .header__icon {
   width: 2rem;
   height: 2rem;
@@ -208,6 +213,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  cursor: pointer;
   background-color: var(--color-elements);
   padding: 1.5rem 2.5rem;
   width: 23rem;
@@ -217,6 +223,9 @@ a {
 }
 
 .filter__label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--color-text);
@@ -225,6 +234,14 @@ a {
 .filter__icon {
   width: 1.8rem;
   height: 1.8rem;
+}
+
+.filter__icon--down {
+  cursor: pointer;
+}
+
+.filter__icon--up {
+  cursor: pointer;
 }
 
 .dropdown {
@@ -258,6 +275,13 @@ a {
 
 .dropdown__item:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+
+.dropdown__item:hover {
+  -webkit-transform: scale(1.1) translate(0.8rem, -0.08rem);
+          transform: scale(1.1) translate(0.8rem, -0.08rem);
+  font-weight: 800;
+  color: var(--color-active);
 }
 
 .card {
@@ -306,6 +330,14 @@ a {
 
 .card__info--item span {
   font-weight: 600;
+}
+
+.active-region {
+  -webkit-transform: scale(1.1) translate(0.8rem, -0.08rem);
+          transform: scale(1.1) translate(0.8rem, -0.08rem);
+  font-weight: 800;
+  color: var(--color-active);
+  color: var(--color-text);
 }
 
 .info {

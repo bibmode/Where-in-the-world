@@ -1,7 +1,3 @@
-.hidden {
-  display: none;
-}
-
 @mixin card-radius {
   border-radius: 5px;
 }
@@ -21,4 +17,14 @@
   border: none;
   outline: none;
   color: currentColor;
+}
+
+@mixin dropdown-active {
+  transform: scale(1.1) translate(0.8rem, -0.08rem);
+  font-weight: 800;
+  color: var(--color-active);
+}
+
+.hidden {
+  display: none;
 }

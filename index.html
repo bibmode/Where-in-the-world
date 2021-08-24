@@ -86,12 +86,23 @@
         <div class="filter">
           <div class="filter__button">
             <a href="#" class="filter__label">Filter by Region</a>
-            <svg class="filter__icon filter__icon--down">
+            <a class="filter__icon--down" href="#">
+              <svg class="filter__icon">
+                <use xlink:href="icons/sprite.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+
+            <a class="filter__icon--up hidden" href="#">
+              <svg class="filter__icon">
+                <use xlink:href="icons/sprite.svg#icon-chevron-up"></use>
+              </svg>
+            </a>
+            <!-- <svg class="filter__icon filter__icon--down">
               <use xlink:href="icons/sprite.svg#icon-chevron-down"></use>
             </svg>
             <svg class="filter__icon filter__icon--up hidden">
               <use xlink:href="icons/sprite.svg#icon-chevron-up"></use>
-            </svg>
+            </svg> -->
           </div>
         </div>
       </nav>

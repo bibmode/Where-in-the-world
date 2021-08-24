@@ -1,6 +1,9 @@
 "use strict";
 
 ////////////////////////////////
+// THEME
+
+////////////////////////////////
 // DROP DOWN TOGGLE
 
 const downBtn = document.querySelector(".filter__icon--down");
@@ -18,6 +21,18 @@ const toggleFilter = function () {
     downBtn.classList.remove("hidden");
     upBtn.classList.add("hidden");
   }
+
+  //hide when clicked outside of it
+  document.addEventListener("mouseup", function (e) {
+    if (
+      e.target.classList.length === 0 ||
+      e.target.classList[0] !== "dropdown__item"
+    ) {
+      dropdown.classList.add("hidden");
+      downBtn.classList.remove("hidden");
+      upBtn.classList.add("hidden");
+    }
+  });
 };
 
 downBtn.addEventListener("click", toggleFilter);
@@ -59,31 +74,12 @@ const removeCards = function () {
 };
 
 ////////////////////////////////
-// SHOW ALL
-const showAllBtn = document.querySelector(".show-all__label");
-
-const showAllCountries = function () {
-  fetch(`https://restcountries.eu/rest/v2/all`)
-    .then((response) => response.json())
-    .then((data) =>
-      data.forEach((country) => {
-        addNewCard(country);
-      })
-    );
-};
-
-showAllCountries();
-
-showAllBtn.addEventListener("click", function () {
-  removeCards();
-  showAllCountries();
-});
-
-////////////////////////////////
 // FILTER
 const filterOptions = document.querySelectorAll(".dropdown__item");
 
 const filterRegion = function (e) {
+  filterOptions.forEach((option) => option.classList.remove("active-region"));
+  e.target.classList.add("active-region");
   removeCards();
 
   const region = e.target.innerText;
@@ -98,13 +94,35 @@ filterOptions.forEach((option) => {
 });
 
 ////////////////////////////////
+// SHOW ALL
+const showAllBtn = document.querySelector(".show-all__label");
+
+const showAllCountries = function () {
+  fetch(`https://restcountries.eu/rest/v2/all`)
+    .then((response) => response.json())
+    .then((data) =>
+      data.forEach((country) => {
+        addNewCard(country);
+      })
+    );
+
+  filterOptions.forEach((option) => option.classList.remove("active-region"));
+};
+
+showAllCountries();
+
+showAllBtn.addEventListener("click", function () {
+  removeCards();
+  showAllCountries();
+});
+
+////////////////////////////////
 // SEARCH COUNTRY
 const searchInput = document.querySelector(".search__input");
 
 const searchCountry = function (e) {
   if (e.key !== "Enter") return;
 
-  console.log(e.target.value);
   fetch(`https://restcountries.eu/rest/v2/name/${e.target.value}`)
     .then((response) => response.json())
     .then(([data]) => {
