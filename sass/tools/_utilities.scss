@@ -38,6 +38,12 @@
 // RESPONSIVE MIXINS
 
 @mixin respond($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (max-width: 78.875em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == tablet {
     @media (max-width: 60.5em) {
       @content;

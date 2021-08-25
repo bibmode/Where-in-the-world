@@ -51,4 +51,8 @@
   padding-top: 7rem;
   height: calc(100vh - 88px);
   //display: none;
+
+  @include respond(tablet) {
+    padding-top: 5rem;
+  }
 }
