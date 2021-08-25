@@ -1,21 +1,27 @@
 body {
   --color-active: hsl(217, 61%, 56%);
+  --color-active-text: hsl(0, 0%, 100%);
   --color-bg: hsl(0, 0%, 98%);
   --color-elements: hsl(0, 0%, 100%);
-  --color-input: hsl(0, 0%, 52%);
+  --color-input: rgb(133, 133, 133);
   --color-show-all: hsl(0, 0%, 52%);
-  --color-search: hsl(0, 0%, 52%);
+  --color-search: rgb(133, 133, 133);
   --color-text: hsl(200, 15%, 8%);
   --color-icons: hsl(200, 15%, 8%);
+
+  --shadow: rgba(133, 133, 133, 0.185);
+  --shadow-sharp: rgba(133, 133, 133, 0.246);
 }
 
 body[data-theme="dark"] {
-  --color-active: hsl(217, 61%, 56%);
   --color-bg: hsl(207, 26%, 17%);
   --color-elements: hsl(209, 23%, 22%);
-  --color-input: hsl(209, 23%, 22%);
+  --color-input: rgb(255, 255, 255);
   --color-show-all: hsl(0, 0%, 100%);
-  --color-search: hsl(209, 23%, 22%);
+  --color-search: rgb(43, 57, 69);
   --color-text: hsl(0, 0%, 100%);
   --color-icons: hsl(0, 0%, 100%);
+
+  --shadow: rgba(43, 57, 69, 0.185);
+  --shadow-sharp: rgba(43, 57, 69, 0.664);
 }

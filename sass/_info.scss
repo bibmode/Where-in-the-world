@@ -18,6 +18,10 @@
       @include card-radius;
       @include card-shadow-sharp;
       @include btn-base;
+
+      &:hover {
+        @include btn-active;
+      }
     }
   }
 
@@ -58,7 +62,6 @@
   &__borders {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
 
     &--label {
       font-size: 1.8rem;
@@ -76,9 +79,15 @@
       margin-left: 1rem;
       margin-bottom: 1.5rem;
       cursor: pointer;
+      transition: all 0.2s;
+
       @include btn-base;
       @include card-radius;
       @include card-shadow-sharp;
+
+      &:hover {
+        @include btn-active;
+      }
     }
   }
 }
@@ -95,7 +104,7 @@
     flex-wrap: wrap;
     list-style: none;
     margin-bottom: 0.7rem;
-    width: 33rem;
+    width: 50%;
 
     span {
       font-weight: 600;

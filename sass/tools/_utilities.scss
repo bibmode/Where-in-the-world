@@ -3,11 +3,11 @@
 }
 
 @mixin card-shadow {
-  box-shadow: 0rem 0rem 0.9rem rgba(163, 163, 163, 0.185);
+  box-shadow: 0rem 0rem 0.9rem var(--shadow);
 }
 
 @mixin card-shadow-sharp {
-  box-shadow: 0 0rem 0.7rem rgba(131, 131, 131, 0.404);
+  box-shadow: 0 0rem 0.7rem var(--shadow-sharp);
 }
 
 @mixin btn-base {
@@ -27,4 +27,9 @@
 
 .hidden {
   display: none;
+}
+
+@mixin btn-active {
+  background-color: var(--color-active);
+  color: var(--color-active-text);
 }

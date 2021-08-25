@@ -39,13 +39,14 @@
     height: 2.5rem;
     margin-left: -47rem;
     z-index: 100;
-    fill: var(--color-search);
+    fill: var(--color-input);
   }
 
   &__input {
     padding: 1.5rem 2.5rem 1.5rem 8rem;
     font-size: 1.8rem;
     color: var(--color-input);
+    background-color: var(--color-elements);
     width: 50rem;
     border: none;
     outline: none;
@@ -163,7 +164,7 @@
 
   &:hover {
     transform: scale(1.06);
-    box-shadow: 0rem 0rem 1.5rem rgba(163, 163, 163, 0.185);
+    box-shadow: 0rem 0rem 1.5rem var(--shadow);
   }
 
   &__flag {

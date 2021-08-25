@@ -3,15 +3,25 @@
 ////////////////////////////////
 // THEME
 const themeBtn = document.querySelector(".header__button");
+const iconMoon = document.querySelector(".header__icon--moon");
+const iconSun = document.querySelector(".header__icon--sun");
 let themeStatus = 1; //1 is for light, 0 is for black
 
 themeBtn.addEventListener("click", function () {
   if (themeStatus === 1) {
     themeStatus = 0;
     document.body.setAttribute("data-theme", "dark");
+    themeBtn.innerText = "Light Mode";
+
+    iconMoon.classList.add("hidden");
+    iconSun.classList.remove("hidden");
   } else {
     themeStatus = 1;
     document.body.setAttribute("data-theme", "");
+    themeBtn.innerText = "Dark Mode";
+
+    iconMoon.classList.remove("hidden");
+    iconSun.classList.add("hidden");
   }
 });
 
@@ -101,6 +111,7 @@ const filterRegion = function (e) {
   e.target.classList.add("active-region");
   removeCards();
   checkError();
+  clearInput();
 
   const region = e.target.innerText;
 
@@ -135,6 +146,7 @@ showAllCountries();
 showAllBtn.addEventListener("click", function () {
   removeCards();
   showAllCountries();
+  clearInput();
   checkError();
 });
 
@@ -162,11 +174,12 @@ const searchInput = document.querySelector(".search__input");
 const searchCountry = function (e) {
   if (e.key !== "Enter") return;
 
-  if (!!e.target.value.trim()) {
-    fetch(`https://restcountries.eu/rest/v2/name/${e.target.value}`)
+  if (!!searchInput.value.trim()) {
+    fetch(`https://restcountries.eu/rest/v2/name/${searchInput.value}`)
       .then((response) => {
         //if response is false
-        if (!response.ok) throw new Error(`Country not found 🚫😣`);
+        if (!response.ok)
+          throw new Error(`'${searchInput.value}' not found 🚫😣`);
 
         return response.json();
       })
@@ -174,15 +187,24 @@ const searchCountry = function (e) {
         removeCards();
         addNewCard(data);
         checkError();
+        clearInput();
       })
       .catch((err) => {
         cardContainer.style.display = "none";
         renderError(`${err.message} Try again!`);
+        clearInput();
       });
   }
 };
 
 searchInput.addEventListener("keydown", searchCountry);
+
+////////////////////////////////
+// CLEAR INPUT
+
+const clearInput = function () {
+  searchInput.value = "";
+};
 
 ////////////////////////////////
 // API FOR INDIVIDUAL FACTS SECTION
