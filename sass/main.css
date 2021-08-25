@@ -398,7 +398,7 @@ a {
   background-color: #fff;
   width: 62rem;
   height: 45rem;
-  margin-right: 9%;
+  margin-right: 7rem;
 }
 
 .flag__img {
@@ -406,8 +406,8 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: left;
-     object-position: left;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .facts {
@@ -453,6 +453,7 @@ a {
   padding: 0.5rem 2.5rem;
   margin-left: 1rem;
   margin-bottom: 1.5rem;
+  cursor: pointer;
   background-color: var(--color-elements);
   font-weight: 600;
   font-family: inherit;
@@ -480,11 +481,18 @@ a {
 }
 
 .list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
   margin-bottom: 0.7rem;
+  width: 33rem;
 }
 
 .list__item span {
   font-weight: 600;
+  margin-right: 1rem;
 }
 /*# sourceMappingURL=main.css.map */

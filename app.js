@@ -213,6 +213,7 @@ const addBorders = function (countries) {
         .then((data) => {
           const borderHTML = `<button class="facts__borders--btn">${data.name}</button>`;
           borderContainer.insertAdjacentHTML("beforeend", borderHTML);
+          changeDetails();
         });
     });
   } else {
@@ -221,10 +222,32 @@ const addBorders = function (countries) {
   }
 };
 
+const changeDetails = function (e) {
+  const borderBtns = document.querySelectorAll(".facts__borders--btn");
+  borderBtns.forEach((btn) => {
+    btn.addEventListener("click", openBorder);
+  });
+};
+
+const openBorder = function (e) {
+  const nextNation = e.target.innerText;
+  fetch(`https://restcountries.eu/rest/v2/name/${nextNation}`)
+    .then((response) => response.json())
+    .then(([data]) => {
+      showInfoDiv(data);
+      //showInfoDiv(data);
+    });
+  //showInfoDiv(nextNation);
+};
+
 ////////////////////////////////
 // SHOW DIV
 
 const showInfoDiv = function (country) {
+  const prevInfo = document.querySelector(".info");
+
+  if (prevInfo !== null) document.body.removeChild(prevInfo);
+
   const languages = [];
   country.languages.forEach((obj) => {
     languages.push(obj.name);
@@ -243,31 +266,33 @@ const showInfoDiv = function (country) {
 
           <div class="facts__list">
             <ul class="list">
-              <li class="list__item"><span>Native Name:</span> ${
+              <li class="list__item"><span>Native Name: </span> ${
                 country.name
               }</li>
-              <li class="list__item"><span>Population:</span> ${country.population.toLocaleString()}</li>
-              <li class="list__item"><span>Region:</span> ${country.region}</li>
-              <li class="list__item"><span>Sub Region:</span> ${
+              <li class="list__item"><span>Population: </span> ${country.population.toLocaleString()}</li>
+              <li class="list__item"><span>Region: </span> ${
+                country.region
+              }</li>
+              <li class="list__item"><span>Sub Region: </span> ${
                 country.subregion
               }</li>
-              <li class="list__item"><span>Capital:</span> ${
+              <li class="list__item"><span>Capital: </span> ${
                 country.capital
               }</li>
-              <li class="list__item"><span>Top Level Domain:</span> ${
+              <li class="list__item"><span>Top Level Domain: </span> ${
                 country.topLevelDomain[0]
               }</li>
-              <li class="list__item"><span>Currencies:</span> ${
+              <li class="list__item"><span>Currencies: </span> ${
                 country.currencies[0].name
               }</li>
-              <li class="list__item"><span>Languages:</span> ${languages.join(
+              <li class="list__item"><span>Languages: </span> ${languages.join(
                 ", "
               )}</li>
             </ul>
           </div>
 
           <div class="facts__borders">
-            <h3 class="facts__borders--label">Border Countries:</h3>
+            <h3 class="facts__borders--label">Border Countries: </h3>
           </div>
         </div>
       </div>
@@ -276,5 +301,6 @@ const showInfoDiv = function (country) {
   mainSection.style.display = "none";
   document.body.insertAdjacentHTML("beforeend", html);
   addBorders(country.borders);
+  changeDetails();
   backAction();
 };
