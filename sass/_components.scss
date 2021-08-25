@@ -2,6 +2,14 @@
   color: var(--color-text);
   &__title {
     font-size: 3rem;
+
+    @include respond(tablet-smallest) {
+      font-size: 2.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2rem;
+    }
   }
 
   &__theme-switch {
@@ -19,12 +27,25 @@
     height: 2rem;
     margin-right: 0.8rem;
     fill: var(--color-icons);
+    @include respond(phone-smallest) {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.3rem;
+    }
   }
 
   &__button {
     font-size: 1.8rem;
     font-weight: 600;
     color: currentColor;
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
+
+    @include respond(phone-smallest) {
+      font-size: 1.3rem;
+    }
   }
 }
 
@@ -34,12 +55,26 @@
   align-self: stretch;
   margin-left: 0;
 
+  @include respond(tablet-small) {
+    width: 100%;
+  }
+
   &__icon {
     width: 2.5rem;
     height: 2.5rem;
     margin-left: -47rem;
     z-index: 100;
     fill: var(--color-input);
+
+    @include respond(tablet) {
+      margin-left: -35rem;
+    }
+
+    @include respond(tablet-small) {
+      position: absolute;
+      left: 2rem;
+      margin-left: 0;
+    }
   }
 
   &__input {
@@ -55,6 +90,15 @@
 
     @include card-radius;
     @include card-shadow;
+
+    @include respond(tablet) {
+      width: 37rem;
+      padding: 1.5rem 2.5rem 1.5rem 5.5rem;
+    }
+
+    @include respond(tablet-small) {
+      width: 100%;
+    }
   }
 }
 
@@ -63,6 +107,18 @@
   margin-right: auto;
   display: flex;
   align-items: center;
+
+  @include respond(tablet) {
+    padding-left: 34rem;
+  }
+
+  @include respond(tablet-small) {
+    margin-right: 1rem;
+    padding-left: 0;
+    margin-left: auto;
+    order: 1;
+  }
+
   &__label {
     font-size: 1.8rem;
     font-weight: 600;
@@ -71,6 +127,10 @@
     border-bottom: 2px solid var(--color-show-all);
     cursor: pointer;
     transition: all 0.2s;
+
+    @include respond(tablet-small) {
+      margin-top: 1.5rem;
+    }
 
     &:hover {
       color: var(--color-active);
@@ -94,6 +154,15 @@
 
     @include card-radius;
     @include card-shadow;
+
+    @include respond(tablet) {
+      height: 5rem;
+      width: 21rem;
+    }
+
+    @include respond(tablet-small) {
+      margin-top: 2rem;
+    }
   }
 
   &__label {
@@ -129,6 +198,17 @@
   @include card-radius;
   @include card-shadow;
 
+  @include respond(tablet) {
+    width: 21rem;
+    top: 11rem;
+  }
+
+  @include respond(tablet-small) {
+    position: absolute;
+    left: 0;
+    top: 16rem;
+  }
+
   &__options {
     display: flex;
     flex-direction: column;
@@ -162,6 +242,19 @@
   @include card-radius;
   @include card-shadow;
 
+  @include respond(tablet) {
+    width: 32%;
+    margin-bottom: 3rem;
+  }
+
+  @include respond(tablet-smallest) {
+    width: 48%;
+  }
+
+  @include respond(phone-small) {
+    width: 85%;
+  }
+
   &:hover {
     transform: scale(1.06);
     box-shadow: 0rem 0rem 1.5rem var(--shadow);
@@ -177,9 +270,21 @@
     padding: 1.5rem 2rem;
     margin-bottom: 3rem;
 
+    @include respond(tablet-small) {
+      margin-bottom: 0;
+    }
+
+    @include respond(tablet-smallest) {
+      margin-bottom: 1rem;
+    }
+
     &--name {
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
+
+      @include respond(tablet-small) {
+        margin-bottom: 0.5rem;
+      }
     }
 
     &--item {

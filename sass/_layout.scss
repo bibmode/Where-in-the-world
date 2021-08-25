@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 7rem;
+  padding: 2rem 5%;
   width: 100%;
 }
 
@@ -17,15 +17,32 @@
   width: 100%;
 
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin: 5rem 0;
+
+  @include respond(tablet) {
+    height: 5rem;
+  }
+
+  @include respond(tablet-small) {
+    margin-top: 3rem;
+  }
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @include respond(tablet-small) {
+    margin-top: 10rem;
+  }
+
+  @include respond(phone-small) {
+    justify-content: center;
+  }
 }
 
 .info {

@@ -33,3 +33,44 @@
   background-color: var(--color-active);
   color: var(--color-active-text);
 }
+
+///////////////////////////
+// RESPONSIVE MIXINS
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 60.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-small {
+    @media (max-width: 47.38em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-smallest {
+    @media (max-width: 39em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media (max-width: 26.56em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-small {
+    @media (max-width: 24.56em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-smallest {
+    @media (max-width: 21.56em) {
+      @content;
+    }
+  }
+}
