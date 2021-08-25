@@ -162,22 +162,24 @@ const searchInput = document.querySelector(".search__input");
 const searchCountry = function (e) {
   if (e.key !== "Enter") return;
 
-  fetch(`https://restcountries.eu/rest/v2/name/${e.target.value}`)
-    .then((response) => {
-      //if response is false
-      if (!response.ok) throw new Error(`Country not found 🚫😣`);
+  if (!!e.target.value.trim()) {
+    fetch(`https://restcountries.eu/rest/v2/name/${e.target.value}`)
+      .then((response) => {
+        //if response is false
+        if (!response.ok) throw new Error(`Country not found 🚫😣`);
 
-      return response.json();
-    })
-    .then(([data]) => {
-      removeCards();
-      addNewCard(data);
-      checkError();
-    })
-    .catch((err) => {
-      cardContainer.style.display = "none";
-      renderError(`${err.message} Try again!`);
-    });
+        return response.json();
+      })
+      .then(([data]) => {
+        removeCards();
+        addNewCard(data);
+        checkError();
+      })
+      .catch((err) => {
+        cardContainer.style.display = "none";
+        renderError(`${err.message} Try again!`);
+      });
+  }
 };
 
 searchInput.addEventListener("keydown", searchCountry);
