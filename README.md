@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontendmentor Site](https://www.frontendmentor.io/solutions/desktopfirst-approach-with-rest-countries-scss-and-vanilla-javascript-4kWRNN1yo)
-- Live Site URL: [live site URL here](https://whereintheworld-gen.netlify.app/#)
+- Solution URL: [My Frontend mentor profile](https://www.frontendmentor.io/solutions/desktopfirst-approach-with-rest-countries-scss-and-vanilla-javascript-4kWRNN1yo)
+- Live Site URL: [Where in the world?](https://whereintheworld-gen.netlify.app/#)
 
 ## My process
 
