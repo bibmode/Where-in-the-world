@@ -62,6 +62,12 @@
     }
   }
 
+  @if $breakpoint == phone-large {
+    @media (max-width: 33.44em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == phone {
     @media (max-width: 26.56em) {
       @content;
@@ -76,6 +82,12 @@
 
   @if $breakpoint == phone-smallest {
     @media (max-width: 21.56em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-tiny {
+    @media (max-width: 20em) {
       @content;
     }
   }

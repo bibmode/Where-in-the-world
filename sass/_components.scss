@@ -113,10 +113,10 @@
   }
 
   @include respond(tablet-small) {
-    margin-right: 1rem;
+    margin-left: 1rem;
     padding-left: 0;
-    margin-left: auto;
-    order: 1;
+    margin-right: auto;
+    //order: 1;
   }
 
   &__label {
@@ -130,6 +130,10 @@
 
     @include respond(tablet-small) {
       margin-top: 1.5rem;
+    }
+
+    @include respond(phone-tiny) {
+      font-size: 1.5rem;
     }
 
     &:hover {
@@ -163,6 +167,10 @@
     @include respond(tablet-small) {
       margin-top: 2rem;
     }
+
+    @include respond(phone-tiny) {
+      width: 19rem;
+    }
   }
 
   &__label {
@@ -170,6 +178,10 @@
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--color-text);
+
+    @include respond(phone-tiny) {
+      font-size: 1.5rem;
+    }
   }
 
   &__icon {
@@ -205,8 +217,12 @@
 
   @include respond(tablet-small) {
     position: absolute;
-    left: 0;
+    right: 0;
     top: 16rem;
+  }
+
+  @include respond(phone-tiny) {
+    width: 19rem;
   }
 
   &__options {
@@ -304,6 +320,7 @@
 }
 
 .error-msg {
+  color: var(--color-text);
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;

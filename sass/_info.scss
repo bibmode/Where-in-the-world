@@ -38,14 +38,29 @@
 
 .flag {
   background-color: #fff;
-  width: 62rem;
-  height: 45rem;
+  width: 65rem;
+  height: 33rem;
   margin-right: 7rem;
 
   @include respond(desktop) {
-    width: 42rem;
-    height: 30rem;
+    width: 49rem;
+    height: 25rem;
     margin-right: 3.5rem;
+  }
+
+  @include respond(tablet) {
+    margin-right: 0;
+    width: 50rem;
+  }
+
+  @include respond(phone) {
+    width: 100vw;
+    height: 25rem;
+  }
+
+  @include respond(phone-small) {
+    width: 100vw;
+    height: 21rem;
   }
 
   &__img {
@@ -64,13 +79,14 @@
 
   color: var(--color-text);
 
+  @include respond(tablet) {
+    align-self: baseline;
+  }
+
   &__name {
     @include respond(tablet) {
       margin-top: 2rem;
     }
-  }
-
-  &__list {
   }
 
   &__borders {
@@ -79,6 +95,10 @@
 
     @include respond(tablet) {
       margin-bottom: 5rem;
+    }
+
+    @include respond(phone-large) {
+      margin-top: 1.6rem;
     }
 
     &--label {
@@ -111,19 +131,25 @@
 }
 
 .list {
-  height: 20rem;
+  height: 23rem;
   width: 100%;
-  margin: 2rem 0 5rem 0;
+  margin: 2rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 
   @include respond(desktop) {
     margin-bottom: 0.5rem;
+    height: 30rem;
   }
 
   @include respond(tablet) {
     margin-bottom: 0.6rem;
+  }
+
+  @include respond(phone-large) {
+    height: fit-content;
+    flex-wrap: nowrap;
   }
 
   &__item {
@@ -132,6 +158,15 @@
     list-style: none;
     margin-bottom: 0.7rem;
     width: 50%;
+
+    @include respond(tablet) {
+      width: 40vw;
+    }
+
+    @include respond(phone-large) {
+      width: 100%;
+      flex-wrap: nowrap;
+    }
 
     span {
       font-weight: 600;
