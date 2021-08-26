@@ -27,7 +27,7 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode 
 
-### Screenshot
+### Screenshots
 
 **Light Mode**
 [![Screenshot-2021-08-26-at-16-29-40-Where-in-the-world.png](https://i.postimg.cc/zXZ8M3D3/Screenshot-2021-08-26-at-16-29-40-Where-in-the-world.png)](https://postimg.cc/xqRwNfzS)
