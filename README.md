@@ -53,21 +53,16 @@ Users should be able to:
 
 ### What I learned
 
--While building this project, I was able to use a REST API for the first time and it was a lot of fun. 
-
--I learned how to catch errors as well as make my own custom error messages for a better user experience using Fetch API. 
-
--I was able to implement a better method of adding media queries for responsivene design by using the power of SASS mixins. 
-
--This project allowed me to practice and enhance my SASS skills. 
-
--I incorporated icons here using svg and use tags with sprite files. I liked how easy this method makes styling svg icons in CSS.
+- While building this project, I was able to use a REST API for the first time and it was a lot of fun. 
+- I learned how to catch errors as well as make my own custom error messages for a better user experience using Fetch API. 
+- I was able to implement a better method of adding media queries for responsivene design by using the power of SASS mixins. 
+- This project allowed me to practice and enhance my SASS skills. 
+- I incorporated icons here using svg and use tags with sprite files. I liked how easy this method makes styling svg icons in CSS.
 
 ### Continued development
 
--This project introduced me to the power of Web APIs. I will continue to practice the usage of them in more efficient methods in the future.
-
--I was very satisfied with the responsiveness of this website and how easy this was to implement because of SASS and Flexbox, so I will start to make my future projects with the methods I used here until I discover an even better method.
+- This project introduced me to the power of Web APIs. I will continue to practice the usage of them in more efficient methods in the future.
+- I was very satisfied with the responsiveness of this website and how easy this was to implement because of SASS and Flexbox, so I will start to make my future projects with the methods I used here until I discover an even better method.
 
 ### Useful resources
 
